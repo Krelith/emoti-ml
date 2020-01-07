@@ -30,7 +30,7 @@ class Pen {
 let pen = new Pen(200, 200, 0, 0, 0);
 
 const classifier = ml5.imageClassifier(
-  'https://teachablemachine.withgoogle.com/models/0HSc2OFY/model.json',
+  'https://teachablemachine.withgoogle.com/models/UDVLUh_6/model.json',
   modelLoaded
 );
 let capture;
