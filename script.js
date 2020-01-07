@@ -34,6 +34,7 @@ const classifier = ml5.imageClassifier(
   modelLoaded
 );
 let capture;
+let myP;
 
 function setup() {
   createCanvas(400, 400);
@@ -41,6 +42,9 @@ function setup() {
   capture = createCapture(VIDEO);
   capture.size(320, 240);
   // capture.hide();
+
+  // Create a <p> element to display results
+  myP = createP('No input');
 }
 
 function draw() {
@@ -52,11 +56,6 @@ function draw() {
   // Display pen
   pen.display();
 
-  // Prep capture
-  translate(width, 0);
-  scale(-1, 1);
-  // image(capture, 0, 0, width, width*0.75);
-
   // Make a prediction with a selected image
   classifier.classify(capture, (err, results) => {
     if (err) throw err;
@@ -65,6 +64,7 @@ function draw() {
     let colour = nextEmote(results[0].label);
     // Update pen colour
     pen.update(colour);
+    myP.html(results[0].label);
   });
 }
 
