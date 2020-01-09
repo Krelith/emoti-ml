@@ -30,7 +30,7 @@ class Pen {
 let pen = new Pen(200, 200, 255, 255, 255);
 
 const classifier = ml5.imageClassifier(
-  "https://teachablemachine.withgoogle.com/models/UDVLUh_6/model.json",
+  'https://teachablemachine.withgoogle.com/models/drzk7vnk/model.json',
   modelLoaded
 );
 let capture;
@@ -46,9 +46,9 @@ function setup() {
   capture.hide();
 
   // Create a <p> element to display results
-  guess1 = createP("No input");
-  guess2 = createP("No input");
-  guess3 = createP("No input");
+  guess1 = createP('No input');
+  guess2 = createP('No input');
+  guess3 = createP('No input');
 }
 
 function draw() {
@@ -67,7 +67,7 @@ function draw() {
     if (err) throw err;
     // console.log(results[0].label);
 
-    if (results[0].label !== "Control") {
+    if (results[0].label !== 'Control') {
       // Get colour based on most likely result
       let colour = nextEmote(results[0].label);
       // Update pen colour
@@ -90,7 +90,7 @@ function draw() {
 
 // Show the model is loaded
 function modelLoaded() {
-  console.log("Model Loaded!");
+  console.log('Model Loaded!');
 }
 
 // Use the latest result to get the corresponding colour
