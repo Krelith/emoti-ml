@@ -2,7 +2,7 @@
 Instructions to open
 
 Open index.html in a browser
-/*
+*/
 
 class Pen {
   constructor(x, y, r, g, b) {
